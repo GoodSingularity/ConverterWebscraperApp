@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>{{ title }} </title>
+<lik rel="stylesheet" href="/css/main.css"
+</head>
+<body>
+<h1>converter</h1>
+<a id='a' download='out.xml' type='text/xml'>Download!</a>
+  <input id='converter' download='out.xml' type="button"  value="Xmlify!" id="converter"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+  var data;
+    $('#converter').click(function(){
+      $.ajax({
+
+        type: 'GET',
+        url: '/json_to_xml',
+        success: function(response){
+          var data = new Blob([response]);
+          var a = document.getElementById('a');
+          a.href = URL.createObjectURL(data);
+            alert(response);
+
+        }
+      });
+    });
+</script>
+</body>
+</html>

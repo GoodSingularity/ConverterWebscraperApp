@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>{{ title }} </title>
+<lik rel="stylesheet" href="/css/main.css"
+</head>
+<body>
+<h1>webscraper</h1>
+<a id='a' download='out.json' href='' type='text/json'>Download!</a>
+
+  <input type="button"  value="Jsonify!" id="webscraper"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+
+    $('#webscraper').click(function(){
+      $.ajax({
+        type: 'GET',
+        url: '/url_to_json',
+        success: function(response){
+          var data = new Blob([response]);
+          var a = document.getElementById('a');
+          a.href = URL.createObjectURL(data);
+            alert(response);
+
+        }
+      });
+    });
+    </script>
+</body>
+</html>

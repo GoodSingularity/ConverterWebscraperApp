@@ -1,0 +1,25 @@
+
+<html>
+<head>
+<title>{{ title }} </title>
+<lik rel="stylesheet" href="/css/main.css"
+</head>
+<body>
+WEBSCRAPER
+<form id="formwebscraper"method="post" enctype="multipart/form-data">
+    {{ formwebscraper.hidden_tag() }}
+    {{ formwebscraper.url }}
+    {{ formwebscraper.regexpr}}
+    <input id="webscraper" type="submit">
+</form>
+CONVERTER
+<form id="formconverter"method="post" enctype="multipart/form-data">
+    {{ formconverter.hidden_tag() }}
+    {{ formconverter.file }}
+    {{ formconverter.url }}
+    {{  formconverter.vr }}
+    <input id="converter" type="submit">
+</form>
+
+</body>
+</html>
